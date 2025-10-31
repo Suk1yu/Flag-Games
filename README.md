@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https:
+**URL**:
 
 ## How can I edit this code?
 
