@@ -3,8 +3,7 @@ import { RotateCcw, Trophy, Zap, Clock, Play } from "lucide-react";
 import FlagCard from "@/components/FlagCard";
 import OptionButton from "@/components/OptionButton";
 import Hearts from "@/components/Hearts";
-import SoundToggle from "@/components/SoundToggle";
-import ThemeToggle from "@/components/ThemeToggle";
+import MenuButton from "@/components/MenuButton";
 import LeaderboardModal from "@/components/LeaderboardModal";
 import NameInput from "@/components/NameInput";
 import { Button } from "@/components/ui/button";
@@ -308,8 +307,7 @@ const Index = () => {
   if (gameState === "menu") {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 relative">
-        <SoundToggle />
-        <ThemeToggle />
+        <MenuButton onLeaderboardClick={() => setShowLeaderboard(true)} />
         
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -357,18 +355,7 @@ const Index = () => {
   // Playing Screen
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 relative">
-      <SoundToggle />
-      <ThemeToggle />
-      
-      {/* Leaderboard Button */}
-      <Button
-        onClick={() => setShowLeaderboard(true)}
-        className="fixed top-4 left-4 z-50"
-        variant="outline"
-        size="icon"
-      >
-        <Trophy className="w-5 h-5" />
-      </Button>
+      <MenuButton onLeaderboardClick={() => setShowLeaderboard(true)} />
 
       {/* Game Area */}
       <main className="w-full max-w-4xl space-y-6 fade-in relative z-10">
